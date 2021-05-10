@@ -1,11 +1,8 @@
-FROM nginx:1.19.6
-RUN set -ex\
-    && apt update -y \
-    && apt upgrade -y \
-    && apt install -y wget\
-    && apt install -y rclone\
-    && apt autoremove -y
-
+FROM golang
+WORKDIR /go
+RUN git clone https://github.com/pingme998/rclone.git
+WORKDIR /go/rclone
+RUN go build
 COPY entrypoint.sh /entrypoint.sh
 COPY rclone.conf /.config/rclone/rclone.conf
 RUN chmod +x /entrypoint.sh
