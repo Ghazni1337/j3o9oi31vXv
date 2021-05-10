@@ -4,4 +4,4 @@
 rclone version
 #serving to port 8080
 #rclone serve http $CLOUDNAME: --addr :$PORT
-rclone serve http CLOUDNAME: --addr :$PORT
+rclone serve http CLOUDNAME: --addr :$PORT --vfs-cache-mode full
