@@ -4,4 +4,4 @@
 rclone version
 #serving to port 8080
 #rclone serve http $CLOUDNAME: --addr :$PORT
-rclone serve http CLOUDNAME: --addr :$PORT --vfs-read-chunk-size 128M
+rclone serve http CLOUDNAME: --addr :$PORT
